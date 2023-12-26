@@ -56,7 +56,7 @@ Heart:
 
 
 
-"I no longer have to sniff other dogs for love. I've found the hottest Corgi on TinDog. Woof."
+
 Pebbles, New York
 
 A Plan for Every Dog's Needs
