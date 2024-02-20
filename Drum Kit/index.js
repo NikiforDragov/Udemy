@@ -1,3 +1,17 @@
+document.querySelectorAll('.drum').forEach((btn) =>
+    btn.addEventListener('click', function () {
+        const buttonInnerHtml = this.innerHTML;
+
+        makeSound(buttonInnerHtml);
+        buttonAnimation(buttonInnerHtml);
+    })
+);
+
+document.addEventListener('keydown', function(e) {
+    makeSound(e.key);
+    buttonAnimation(e.key);
+});
+
 function makeSound(key) {
     switch (key) {
         case 'w':
@@ -34,16 +48,12 @@ function makeSound(key) {
     }
 }
 
-document.querySelectorAll('.drum').forEach((btn) =>
-    btn.addEventListener('click', function () {
-        const buttonInnerHtml = this.innerHTML;
+function buttonAnimation(currentKey) {
+   let activeButton = document.querySelector('.' + currentKey);
 
-        makeSound(buttonInnerHtml);
-    })
-);
+   activeButton.classList.add('pressed');
 
-document.addEventListener('keydown', function(e) {
-    makeSound(e.key);
-});
-
-
+   setTimeout(() => {
+    activeButton.classList.remove('pressed')
+   }, 100);
+}
