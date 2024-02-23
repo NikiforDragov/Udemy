@@ -1,3 +1,5 @@
- $('h1').css('color', 'red');
+ $('body').keypress((e) => {
+    $('h1').text(e.key);
+ });
 
 
