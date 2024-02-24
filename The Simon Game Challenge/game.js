@@ -24,9 +24,29 @@ $('.btn').on('click', (e) => {
     playSound(userChosenColor);
 
     animatePress(userChosenColor);
+
+    checkAnswer(userClickedPattern.length - 1)
 });
 
+function checkAnswer(currentLevel) {
+    if(gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
+        console.log('Success');
+
+        if(gamePattern.length === userClickedPattern.length) {
+
+            setTimeout(() => {
+                nextSequence();
+            }, 1000);
+        }
+    } else {
+        console.log('Wrong');
+    }
+}
+
 function nextSequence() {
+    userClickedPattern.length = 0;
+
+
     level++;
 
     $('#level-title').text(`Level ${level}`);
